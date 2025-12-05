@@ -21,7 +21,7 @@ export function NavBarLink({ item, className }: NavBarLinkProps) {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className={cn('gap-1', className)}>
+          <Button variant="ghost" size="lg" className={cn('gap-1 text-white', className)}>
             {item.label}
             <ChevronDown className="h-4 w-4" />
           </Button>
@@ -42,7 +42,7 @@ export function NavBarLink({ item, className }: NavBarLinkProps) {
   // Simple link without dropdown
   return (
     <Link href={item.href || '#'}>
-      <Button variant="ghost" className={className}>
+      <Button variant="ghost" size="lg" className={className}>
         {item.label}
       </Button>
     </Link>

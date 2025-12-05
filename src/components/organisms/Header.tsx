@@ -11,20 +11,24 @@ export interface HeaderProps {
 
 export function Header({ data, className }: HeaderProps) {
   return (
-    <header className={cn('border-b bg-background', className)}>
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+    <header className={cn('sticky top-0 z-50', className)}>
+      <div className="container mx-auto flex py-2.5 items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <Logo />
+        <div className="flex-shrink-0">
+          <Logo />
+        </div>
 
-        {/* Navigation */}
-        <nav className="hidden items-center gap-6 md:flex">
+        {/* Navigation - centered */}
+        <nav className="hidden flex-1 items-center justify-center gap-2 md:flex">
           {data.navigationItems.map((item, index) => (
             <NavBarLink key={index} item={item} />
           ))}
         </nav>
 
         {/* CTA Button */}
-        <Button>{data.ctaButtonText}</Button>
+        <div className="flex-shrink-0">
+          <Button size="lg">{data.ctaButtonText}</Button>
+        </div>
       </div>
     </header>
   );

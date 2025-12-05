@@ -11,6 +11,7 @@ export interface NavigationItem {
 export interface ProfileCard {
   name: string;
   imageUrl: string;
+  country: string;
   skills: string[];
 }
 

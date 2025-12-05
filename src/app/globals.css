@@ -6,9 +6,14 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .bg-opacity-primary {
+    background-color: hsla(0, 0%, 100%, 0.2);
+  }
+  .bg-opacity-secondary {
+    background-color: hsla(0, 0%, 100%, 0.4);
+  }
 }
-
-
 
 @layer base {
   :root {
@@ -18,8 +23,8 @@
     --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 182, 79%, 58%;
+    --primary-foreground: 225, 100%, 65%;
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
     --muted: 210 40% 96%;
@@ -66,13 +71,12 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-poppins), system-ui, sans-serif;
   }
 }

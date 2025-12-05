@@ -1,5 +1,4 @@
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Heading3, Paragraph } from '@/components/atoms/Typography';
+import { Lead, Paragraph } from '@/components/atoms/Typography';
 import { FeatureItem } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
@@ -10,13 +9,9 @@ export interface FeatureCardProps {
 
 export function FeatureCard({ feature, className }: FeatureCardProps) {
   return (
-    <Card className={cn('text-center', className)}>
-      <CardHeader className="pb-3">
-        <Heading3 className="text-lg">{feature.title}</Heading3>
-      </CardHeader>
-      <CardContent>
-        <Paragraph className="text-sm text-muted-foreground mt-0">{feature.description}</Paragraph>
-      </CardContent>
-    </Card>
+    <div className={cn('border-t py-2 flex flex-col space-y-2', className)}>
+      <Lead className="font-bold text-white">{feature.title}</Lead>
+      <Paragraph className="mt-0 text-md leading-relaxed text-white">{feature.description}</Paragraph>
+    </div>
   );
 }

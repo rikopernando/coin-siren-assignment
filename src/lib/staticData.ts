@@ -30,7 +30,7 @@ export const heroData: HeroSection = {
   ctaText: '개발자가 필요하신가요?',
   profileCard: {
     name: 'Abhishek Gupta',
-    imageUrl: '/images/profile-abhishek.jpg',
+    imageUrl: '/images/profile.jpg',
     skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
   },
 };
@@ -63,27 +63,27 @@ export const servicesData: ServiceCategory[] = [
   {
     id: 'overseas-marketing',
     name: '해외 마케팅',
-    iconName: 'Globe',
+    iconName: 'icon-marketing.webp',
   },
   {
     id: 'publisher',
     name: '퍼블리셔',
-    iconName: 'Code',
+    iconName: 'icon-image.webp',
   },
   {
     id: 'cad-engineer',
     name: '캐드원(제도사)',
-    iconName: 'Pencil',
+    iconName: 'icon-box.webp',
   },
   {
     id: 'overseas-sales',
     name: '해외 세일즈',
-    iconName: 'TrendingUp',
+    iconName: 'icon-target.webp',
   },
   {
     id: 'overseas-cs',
     name: '해외 CS',
-    iconName: 'Headphones',
+    iconName: 'icon-call.webp',
   },
 ];
 

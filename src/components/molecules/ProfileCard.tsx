@@ -23,20 +23,20 @@ export function ProfileCard({ profile, className }: ProfileCardProps) {
   };
 
   return (
-    <Card className={cn('overflow-hidden', className)}>
-      <CardHeader className="pb-4">
+    <Card className={cn('overflow-hidden border-2', className)}>
+      <CardHeader className="space-y-6 pb-6">
         <div className="flex flex-col items-center gap-4">
-          <Avatar className="h-24 w-24">
+          <Avatar className="h-28 w-28 border-4 border-background shadow-lg">
             <AvatarImage src={profile.imageUrl} alt={profile.name} />
-            <AvatarFallback className="text-lg">{getInitials(profile.name)}</AvatarFallback>
+            <AvatarFallback className="text-xl font-bold">{getInitials(profile.name)}</AvatarFallback>
           </Avatar>
-          <h3 className="text-xl font-semibold text-center">{profile.name}</h3>
+          <h3 className="text-center text-2xl font-bold">{profile.name}</h3>
         </div>
       </CardHeader>
-      <CardContent>
-        <div className="flex flex-wrap gap-2 justify-center">
+      <CardContent className="pb-8">
+        <div className="flex flex-wrap justify-center gap-2">
           {profile.skills.map((skill, index) => (
-            <Badge key={index} variant="secondary" className="text-sm">
+            <Badge key={index} variant="secondary" className="px-3 py-1 text-sm font-medium">
               {skill}
             </Badge>
           ))}

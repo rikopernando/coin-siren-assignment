@@ -6,21 +6,19 @@ export interface TypographyProps {
 }
 
 export function Heading1({ children, className }: TypographyProps) {
-  return (
-    <h1 className={cn('scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl', className)}>{children}</h1>
-  );
+  return <h1 className={cn('scroll-m-20 text-4xl font-black lg:text-5xl', className)}>{children}</h1>;
 }
 
 export function Heading2({ children, className }: TypographyProps) {
-  return <h2 className={cn('scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl', className)}>{children}</h2>;
+  return <h2 className={cn('scroll-m-20 text-3xl font-black lg:text-4xl', className)}>{children}</h2>;
 }
 
 export function Heading3({ children, className }: TypographyProps) {
-  return <h3 className={cn('scroll-m-20 text-2xl font-semibold tracking-tight', className)}>{children}</h3>;
+  return <h3 className={cn('scroll-m-20 text-2xl font-black', className)}>{children}</h3>;
 }
 
 export function Heading4({ children, className }: TypographyProps) {
-  return <h4 className={cn('scroll-m-20 text-xl font-semibold tracking-tight', className)}>{children}</h4>;
+  return <h4 className={cn('scroll-m-20 text-xl font-semibold', className)}>{children}</h4>;
 }
 
 export function Paragraph({ children, className }: TypographyProps) {
@@ -28,7 +26,7 @@ export function Paragraph({ children, className }: TypographyProps) {
 }
 
 export function Lead({ children, className }: TypographyProps) {
-  return <p className={cn('text-xl text-muted-foreground', className)}>{children}</p>;
+  return <p className={cn('text-[18px] text-muted-foreground', className)}>{children}</p>;
 }
 
 export function Large({ children, className }: TypographyProps) {
