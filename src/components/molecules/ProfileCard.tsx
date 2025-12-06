@@ -77,11 +77,16 @@ export function ProfileCard({ profile, className, isActive = false }: ProfileCar
             </Card>
           </div>
         </TooltipTrigger>
-        <TooltipContent side="top" align="center" sideOffset={16}>
-          <motion.p initial="hidden" animate={showTooltip ? 'visible' : 'hidden'} variants={fadeInDelayedVariants}>
-            {profile.price}
-          </motion.p>
-          <TooltipArrow className="fill-white !visible" width={12} height={6} />
+        <TooltipContent variant="secondary" side="top" align="center" sideOffset={16}>
+          <motion.div
+            className="flex gap-2 items-center"
+            initial="hidden"
+            animate={showTooltip ? 'visible' : 'hidden'}
+            variants={fadeInDelayedVariants}>
+            <Image src="/icons/icon-currency.webp" width={26} height={26} alt={profile.price} />
+            <span>{profile.price}</span>
+          </motion.div>
+          <TooltipArrow className="fill-tooltip-secondary !visible" width={12} height={6} />
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

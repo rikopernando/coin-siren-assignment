@@ -18,6 +18,18 @@
   .border-outline-badge {
     border-color: hsla(225, 13%, 79%, 1);
   }
+
+  .bg-tooltip-secondary {
+    background-color: hsla(var(--tooltip-secondary-foreground), 1);
+  }
+
+  .fill-tooltip-secondary {
+    fill: hsla(var(--tooltip-secondary-foreground), 1);
+  }
+
+  .text-tooltip-secondary {
+    color: hsla(var(--tooltip-secondary), 1);
+  }
 }
 
 @layer base {
@@ -38,6 +50,8 @@
     --accent-foreground: 222 47% 11%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
+    --tooltip-secondary: 165, 100%, 39%;
+    --tooltip-secondary-foreground: 146, 47%, 94%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 217 91% 60%;
