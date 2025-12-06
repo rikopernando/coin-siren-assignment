@@ -57,9 +57,9 @@ export function HeroSection({ data, className }: HeroSectionProps) {
       </div>
 
       {/* Horizontal Scrollable Services */}
-      <div className="flex justify-center">
-        <div className="mt-12 overflow-x-auto scrollbar-hide">
-          <div className="inline-flex gap-3 px-6 lg:px-8 pb-4">
+      <div className="mt-12 w-full overflow-x-auto scrollbar-hide">
+        <div className="mx-auto max-w-7xl">
+          <div className="inline-flex gap-4 px-6 lg:px-8 pb-4">
             {data.services.map((service) => (
               <ServiceCard key={service.id} service={service} className="flex-shrink-0" />
             ))}
