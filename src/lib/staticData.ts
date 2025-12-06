@@ -35,6 +35,29 @@ export const heroData: HeroSection = {
     experience: '마케팅 · 2y+',
     skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
   },
+  profileCards: [
+    {
+      name: 'Abhishek Gupta',
+      imageUrl: '/images/profile.webp',
+      countryFlagUrl: '/images/country-flag.webp',
+      experience: '마케팅 · 2y+',
+      skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
+    },
+    {
+      name: 'Abhishek Gupta',
+      imageUrl: '/images/profile.webp',
+      countryFlagUrl: '/images/country-flag.webp',
+      experience: '개발자 · 3y+',
+      skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
+    },
+    {
+      name: 'Abhishek Gupta',
+      imageUrl: '/images/profile.webp',
+      countryFlagUrl: '/images/country-flag.webp',
+      experience: '디자이너 · 4y+',
+      skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
+    },
+  ],
 };
 
 /**

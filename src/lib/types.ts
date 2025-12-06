@@ -32,7 +32,8 @@ export interface HeroSection {
   headline: string;
   subheadline: string;
   ctaText: string;
-  profileCard: ProfileCard;
+  profileCard: ProfileCard; // Keep for backward compatibility
+  profileCards?: ProfileCard[]; // New: support multiple profiles for carousel
 }
 
 export interface HeaderData {

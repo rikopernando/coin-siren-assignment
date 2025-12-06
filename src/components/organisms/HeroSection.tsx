@@ -1,7 +1,7 @@
 'use client';
 
 import { Heading1, Heading3 } from '@/components/atoms/Typography';
-import { ProfileCard } from '@/components/molecules/ProfileCard';
+import { ProfileCarousel } from '@/components/molecules/ProfileCarousel';
 import { FeatureCard } from '@/components/molecules/FeatureCard';
 import { ServiceCard } from '@/components/molecules/ServiceCard';
 import { Button } from '@/components/ui/button';
@@ -16,7 +16,7 @@ export interface HeroSectionProps {
 export function HeroSection({ data, className }: HeroSectionProps) {
   return (
     <section className={cn('container mx-auto px-6 py-20 md:py-32 lg:px-8', className)}>
-      <div className="grid gap-16 lg:grid-cols-2">
+      <div className="grid gap-2 lg:grid-cols-2">
         {/* Left Column - Text Content */}
         <div className="flex flex-col justify-center space-y-4">
           <Heading1 className="text-white font-bold !leading-[58px]">
@@ -48,9 +48,9 @@ export function HeroSection({ data, className }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* Right Column - Profile Card */}
+        {/* Right Column - Profile Carousel */}
         <div className="flex items-center justify-start">
-          <ProfileCard profile={data.hero.profileCard} className="w-full max-w-xs shadow-xl" />
+          <ProfileCarousel profiles={data.hero.profileCards || [data.hero.profileCard]} className="w-full" />
         </div>
       </div>
 

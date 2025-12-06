@@ -26,7 +26,7 @@ export function ProfileCard({ profile, className }: ProfileCardProps) {
   };
 
   return (
-    <Card className={cn('overflow-hidden', className)}>
+    <Card className={cn('max-w-xs soverflow-hidden', className)}>
       <CardHeader className="space-y-6 pt-8 px-8 pb-6">
         <div className="flex flex-col items-center gap-2">
           <Avatar className="h-[120px] w-[120px] shadow-lg overflow-visible">
