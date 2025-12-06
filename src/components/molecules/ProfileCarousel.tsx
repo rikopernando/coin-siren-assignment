@@ -99,7 +99,7 @@ export function ProfileCarousel({ profiles, className }: ProfileCarouselProps) {
                     // Other cards - completely hidden
                     position === null && 'z-0 scale-75 -translate-x-1/2 opacity-0 pointer-events-none',
                   )}>
-                  <ProfileCard profile={profile} className="w-[292px] min-h-[400px] shadow-2xl" />
+                  <ProfileCard profile={profile} className="w-[292px] min-h-[400px] shadow-2xl" isActive={isActive} />
                 </div>
               );
             })}

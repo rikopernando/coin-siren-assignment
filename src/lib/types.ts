@@ -13,6 +13,7 @@ export interface ProfileCard {
   imageUrl: string;
   countryFlagUrl: string;
   skills: string[];
+  price: string;
   experience: string;
 }
 

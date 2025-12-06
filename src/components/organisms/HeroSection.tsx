@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { TooltipArrow } from '@radix-ui/react-tooltip';
+
 import { Heading1, Heading3 } from '@/components/atoms/Typography';
 import { ProfileCarousel } from '@/components/molecules/ProfileCarousel';
 import { FeatureCard } from '@/components/molecules/FeatureCard';
@@ -78,7 +79,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
 
   return (
     <TooltipProvider>
-      <section className={cn('py-20 md:py-40', className)}>
+      <section className={cn('py-20 md:pt-[14rem] md:pb-20', className)}>
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
             {/* Left Column - Text Content */}

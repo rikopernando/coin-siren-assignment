@@ -33,6 +33,7 @@ export const heroData: HeroSection = {
     imageUrl: '/images/profile.webp',
     countryFlagUrl: '/images/country-flag.webp',
     experience: '마케팅 · 2y+',
+    price: '월 100만원',
     skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
   },
   profileCards: [
@@ -41,6 +42,7 @@ export const heroData: HeroSection = {
       imageUrl: '/images/profile.webp',
       countryFlagUrl: '/images/country-flag.webp',
       experience: '마케팅 · 2y+',
+      price: '월 100만원',
       skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
     },
     {
@@ -48,12 +50,14 @@ export const heroData: HeroSection = {
       imageUrl: '/images/profile.webp',
       countryFlagUrl: '/images/country-flag.webp',
       experience: '개발자 · 3y+',
+      price: '월 100만원',
       skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
     },
     {
       name: 'Abhishek Gupta',
       imageUrl: '/images/profile.webp',
       countryFlagUrl: '/images/country-flag.webp',
+      price: '월 100만원',
       experience: '디자이너 · 4y+',
       skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
     },
