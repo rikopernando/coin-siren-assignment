@@ -37,6 +37,24 @@ export const fadeInVariants: Variants = {
 };
 
 /**
+ * FadeIn animation variant with delay
+ * Simple fade in effect with customizable delay
+ */
+export const fadeInDelayedVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.3,
+      ease: 'easeOut',
+    },
+  },
+};
+
+/**
  * Stagger container for animating children sequentially
  */
 export const staggerContainerVariants: Variants = {
