@@ -76,7 +76,7 @@ export function ProfileCarousel({ profiles, className }: ProfileCarouselProps) {
       </div>
 
       {/* Visual Carousel Container - stacked cards */}
-      <div className="relative h-[450px]">
+      <div className="relative">
         <div className="relative h-full overflow-visible">
           <div className="flex h-full items-center justify-center">
             {profiles.map((profile, index) => {
