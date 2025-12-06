@@ -7,6 +7,7 @@ export interface LandingPageTemplateProps {
 }
 
 export function LandingPageTemplate({ data }: LandingPageTemplateProps) {
+  return (
     <div className="min-h-screen">
       {/* Header */}
       <Header data={data.header} />

@@ -50,7 +50,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
 
         {/* Right Column - Profile Card */}
         <div className="flex items-center justify-start">
-          <ProfileCard profile={data.hero.profileCard} className="w-full max-w-sm shadow-xl" />
+          <ProfileCard profile={data.hero.profileCard} className="w-full max-w-xs shadow-xl" />
         </div>
       </div>
 

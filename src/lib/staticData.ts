@@ -30,7 +30,9 @@ export const heroData: HeroSection = {
   ctaText: '개발자가 필요하신가요?',
   profileCard: {
     name: 'Abhishek Gupta',
-    imageUrl: '/images/profile.jpg',
+    imageUrl: '/images/profile.webp',
+    countryFlagUrl: '/images/country-flag.webp',
+    experience: '마케팅 · 2y+',
     skills: ['마케팅 콘텐츠 제작', '인스타그램 관리', '트위터 관리', '블로그 글 작성'],
   },
 };

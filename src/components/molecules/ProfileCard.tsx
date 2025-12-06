@@ -1,5 +1,8 @@
 'use client';
 
+import Image from 'next/image';
+
+import { Large, Heading3 } from '@/components/atoms/Typography';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -23,20 +26,26 @@ export function ProfileCard({ profile, className }: ProfileCardProps) {
   };
 
   return (
-    <Card className={cn('overflow-hidden border-2', className)}>
-      <CardHeader className="space-y-6 pb-6">
-        <div className="flex flex-col items-center gap-4">
-          <Avatar className="h-28 w-28 border-4 border-background shadow-lg">
+    <Card className={cn('overflow-hidden', className)}>
+      <CardHeader className="space-y-6 pt-8 px-8 pb-6">
+        <div className="flex flex-col items-center gap-2">
+          <Avatar className="h-[120px] w-[120px] shadow-lg overflow-visible">
             <AvatarImage src={profile.imageUrl} alt={profile.name} />
             <AvatarFallback className="text-xl font-bold">{getInitials(profile.name)}</AvatarFallback>
+            <div className="absolute bottom-1 right-1.5">
+              <Image width={25} height={18} src={profile.countryFlagUrl} alt="Country" />
+            </div>
           </Avatar>
-          <h3 className="text-center text-2xl font-bold">{profile.name}</h3>
+          <Heading3 className="text-center">{profile.name}</Heading3>
+          <Large className="mt-0 text-md font-black leading-relaxed text-primary-foreground">
+            {profile.experience}
+          </Large>
         </div>
       </CardHeader>
-      <CardContent className="pb-8">
+      <CardContent className="px-8 pb-8">
         <div className="flex flex-wrap justify-center gap-2">
           {profile.skills.map((skill, index) => (
-            <Badge key={index} variant="secondary" className="px-3 py-1 text-sm font-medium">
+            <Badge key={index} variant="outline" className="px-3 py-1">
               {skill}
             </Badge>
           ))}
