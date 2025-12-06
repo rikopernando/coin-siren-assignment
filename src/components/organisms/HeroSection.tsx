@@ -16,9 +16,9 @@ export interface HeroSectionProps {
 export function HeroSection({ data, className }: HeroSectionProps) {
   return (
     <section className={cn('container mx-auto px-6 py-20 md:py-32 lg:px-8', className)}>
-      <div className="grid gap-2 lg:grid-cols-2">
+      <div className="grid gap-8 lg:grid-cols-2">
         {/* Left Column - Text Content */}
-        <div className="flex flex-col justify-center space-y-4">
+        <div className="flex flex-col justify-center space-y-6">
           <Heading1 className="text-white font-bold !leading-[58px]">
             {data.hero.headline.split('\n').map((line, index) => (
               <span key={index} className="block">
