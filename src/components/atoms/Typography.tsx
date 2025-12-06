@@ -2,11 +2,16 @@ import { cn } from '@/lib/utils';
 
 export interface TypographyProps {
   children: React.ReactNode;
+  id?: string;
   className?: string;
 }
 
-export function Heading1({ children, className }: TypographyProps) {
-  return <h1 className={cn('scroll-m-20 text-4xl font-black lg:text-5xl', className)}>{children}</h1>;
+export function Heading1({ children, className, id }: TypographyProps) {
+  return (
+    <h1 id={id} className={cn('scroll-m-20 text-4xl font-black lg:text-5xl', className)}>
+      {children}
+    </h1>
+  );
 }
 
 export function Heading2({ children, className }: TypographyProps) {
