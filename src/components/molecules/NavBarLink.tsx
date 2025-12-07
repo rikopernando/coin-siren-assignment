@@ -13,15 +13,23 @@ import { cn } from '@/lib/utils';
 export interface NavBarLinkProps {
   item: NavigationItem;
   className?: string;
+  isScrolled?: boolean;
 }
 
-export function NavBarLink({ item, className }: NavBarLinkProps) {
+export function NavBarLink({ item, className, isScrolled = false }: NavBarLinkProps) {
   // If item has children, render as dropdown
   if (item.children && item.children.length > 0) {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="lg" className={cn('gap-1 text-white', className)}>
+          <Button
+            variant="ghost"
+            size="lg"
+            className={cn(
+              'gap-1 transition-colors duration-300',
+              isScrolled ? 'text-primary-foreground' : 'text-white',
+              className,
+            )}>
             {item.label}
             <ChevronDown className="h-4 w-4" />
           </Button>
@@ -51,7 +59,14 @@ export function NavBarLink({ item, className }: NavBarLinkProps) {
   // Simple link without dropdown
   return (
     <Link href={item.href || '#'}>
-      <Button variant="ghost" size="lg" className={className}>
+      <Button
+        variant="ghost"
+        size="lg"
+        className={cn(
+          'transition-colors duration-300',
+          isScrolled ? 'text-primary-foreground' : 'text-white',
+          className,
+        )}>
         {item.label}
       </Button>
     </Link>
