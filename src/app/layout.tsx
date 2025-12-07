@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
 
 const poppins = Poppins({
@@ -7,6 +7,13 @@ const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
   variable: '--font-poppins',
+  fallback: ['system-ui', 'sans-serif'],
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
   fallback: ['system-ui', 'sans-serif'],
 });
 
@@ -23,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} ${inter.variable} ${poppins.className} antialiased`}>{children}</body>
     </html>
   );
 }

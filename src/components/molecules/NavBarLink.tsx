@@ -26,9 +26,18 @@ export function NavBarLink({ item, className }: NavBarLinkProps) {
             <ChevronDown className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="w-56">
+        <DropdownMenuContent align="start" className="p-0 w-56">
           {item.children.map((child, index) => (
-            <DropdownMenuItem key={index} asChild>
+            <DropdownMenuItem
+              className={cn(
+                'font-inter hover:text-gray-700 focus:text-gray-700',
+                index === (item?.children?.length || 0) - 1
+                  ? 'border-gray/100 rounded-none border-t'
+                  : 'rounded-none border-t-0',
+                index === 0 ? 'font-bold' : 'font-medium',
+              )}
+              key={index}
+              asChild>
               <Link href={child.href || '#'} className="w-full cursor-pointer">
                 {child.label}
               </Link>

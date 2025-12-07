@@ -64,6 +64,7 @@
     --footer: 0, 0%, 98%;
     --footer-text-primary: 225, 11%, 23%;
     --footer-text-secondary: 225, 8%, 40%;
+    --gray-700: 217, 23%, 27%;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -100,5 +101,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-poppins), system-ui, sans-serif;
+  }
+  .font-inter {
+    font-family: var(--font-inter), system-ui, sans-serif;
   }
 }

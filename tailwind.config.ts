@@ -55,6 +55,9 @@ const config: Config = {
           'text-primary': 'hsl(var(--footer-text-primary))',
           'text-secondary': 'hsl(var(--footer-text-secondary))',
         },
+        gray: {
+          700: 'hsl(var(--gray-700))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
