@@ -34,7 +34,7 @@ export function NavBarLink({ item, className, isScrolled = false }: NavBarLinkPr
             <ChevronDown className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="start" className="p-0 w-56">
+        <DropdownMenuContent align="start" className="z-[999] p-0 w-56">
           {item.children.map((child, index) => (
             <DropdownMenuItem
               className={cn(
