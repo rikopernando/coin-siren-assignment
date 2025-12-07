@@ -18,7 +18,7 @@ export function ProfileCarousel({ profiles, className }: ProfileCarouselProps) {
     loop: true,
     align: 'center',
     skipSnaps: false,
-    dragFree: false,
+    dragFree: true,
   });
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -115,17 +115,17 @@ export function ProfileCarousel({ profiles, className }: ProfileCarouselProps) {
       <Button
         variant="outline"
         size="icon"
-        className="absolute left-0 md:-left-[16px] top-1/2 -translate-y-1/2 z-40 border-0 text-white bg-transparent hover:text-primary-foreground rounded-full"
+        className="absolute -left-[16px] sm:-left-[16px] top-1/2 -translate-y-1/2 z-40 border-0 text-white bg-transparent hover:text-primary-foreground rounded-full"
         onClick={scrollPrev}>
-        <ChevronLeft className="!h-8 !w-8" />
+        <ChevronLeft className="!h-6 sm:!h-8 !w-6 sm:!w-8" />
       </Button>
 
       <Button
         variant="outline"
         size="icon"
-        className="absolute right-[2px] md:-right-[24px] top-1/2 -translate-y-1/2 z-40 border-0 text-white bg-transparent hover:text-primary-foreground rounded-full"
+        className="absolute -right-[14px] sm:-right-[24px] top-1/2 -translate-y-1/2 z-40 border-0 text-white bg-transparent hover:text-primary-foreground rounded-full"
         onClick={scrollNext}>
-        <ChevronRight className="!h-8 !w-8" />
+        <ChevronRight className="!h-6 sm:!h-8 !w-6 sm:!w-8" />
       </Button>
     </div>
   );

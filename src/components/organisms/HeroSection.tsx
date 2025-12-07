@@ -123,12 +123,16 @@ export function HeroSection({ data, className }: HeroSectionProps) {
                 initial="hidden"
                 animate={subheadlineInView ? 'visible' : 'hidden'}
                 variants={fadeInUpVariants}>
-                <Heading3 id="hero-subheadline" className="text-white text-lg sm:text-xl md:text-2xl">
+                <Heading3 id="hero-subheadline" className="hidden sm:blocktext-white text-lg sm:text-xl md:text-2xl">
                   {data.hero.subheadline.split('\n').map((line, index) => (
                     <span key={index} className="block">
                       {line}
                     </span>
                   ))}
+                </Heading3>
+
+                <Heading3 id="hero-subheadline" className="block sm:hidden text-white text-lg sm:text-xl md:text-2xl">
+                  {data.hero.subheadline}
                 </Heading3>
 
                 <div className="hidden md:flex flex-col gap-4 sm:flex-row sm:items-center mt-4">
@@ -182,21 +186,23 @@ export function HeroSection({ data, className }: HeroSectionProps) {
 
         <div className="flex flex-col md:hidden container mx-auto px-4 mt-40">
           {/* Ability section - Mobile only */}
-          <div className="grid grid-cols-4 gap-x-2 gap-y-3 my-6">
-            <div className="col-span-1 flex items-center gap-2">
+          <div className="flex gap-x-2 mb-2 mt-6">
+            <div className="min-w-[92px] flex items-center gap-2">
               <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
               <span className="text-white text-sm font-bold">한국어 능력</span>
             </div>
-            <div className="col-span-3 flex items-center gap-2">
+            <div className="flex items-center gap-2">
               <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
               <span className="text-white text-sm font-bold">업무 수행 능력</span>
             </div>
+          </div>
 
-            <div className="col-span-1 flex items-center gap-2">
+          <div className="flex gap-x-2 mb-6">
+            <div className="min-w-[92px] flex items-center gap-2">
               <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
               <span className="text-white text-sm font-bold">겸업 여부</span>
             </div>
-            <div className="col-span-3 flex items-center gap-2">
+            <div className="flex items-center gap-2">
               <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
               <span className="text-white text-sm font-bold">평판 조회</span>
             </div>
