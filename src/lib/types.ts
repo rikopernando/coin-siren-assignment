@@ -42,9 +42,38 @@ export interface HeaderData {
   ctaButtonText: string;
 }
 
+export interface FooterCard {
+  id: string;
+  iconName: string;
+  title: string;
+  link: string;
+}
+
+export interface FooterData {
+  logo: string;
+  description: string;
+  phone: string;
+  email: string;
+  cards: FooterCard[];
+  companyInfo: {
+    name: string;
+    ceo: string;
+    registrationNumber: string;
+    address: string;
+  };
+  indiaInfo: {
+    name: string;
+    ceo: string;
+    registrationNumber: string;
+    address: string;
+  };
+  copyright: string;
+}
+
 export interface LandingPageData {
   header: HeaderData;
   hero: HeroSection;
   features: FeatureItem[];
   services: ServiceCategory[];
+  footer: FooterData;
 }

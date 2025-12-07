@@ -61,6 +61,9 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --footer: 0, 0%, 98%;
+    --footer-text-primary: 225, 11%, 23%;
+    --footer-text-secondary: 225, 8%, 40%;
   }
   .dark {
     --background: 0 0% 3.9%;

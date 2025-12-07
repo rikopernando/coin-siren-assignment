@@ -50,6 +50,11 @@ const config: Config = {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))',
         },
+        footer: {
+          DEFAULT: 'hsl(var(--footer))',
+          'text-primary': 'hsl(var(--footer-text-primary))',
+          'text-secondary': 'hsl(var(--footer-text-secondary))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',

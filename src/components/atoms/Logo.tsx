@@ -5,12 +5,20 @@ import Image from 'next/image';
 export interface LogoProps {
   className?: string;
   href?: string;
+  width?: number;
+  height?: number;
+  variant?: 'light' | 'dark';
 }
 
-export function Logo({ className, href = '/' }: LogoProps) {
+export function Logo({ className, href = '/', variant = 'dark', height = 21, width = 114 }: LogoProps) {
   return (
     <Link href={href} className={cn('flex items-center gap-2 font-bold text-xl', className)}>
-      <Image width={114} height={21} src="/images/dark-logo.webp" alt="Logo" />
+      <Image
+        width={width}
+        height={height}
+        src={variant === 'dark' ? '/images/dark-logo.webp' : '/images/light-logo.webp'}
+        alt="Logo"
+      />
     </Link>
   );
 }

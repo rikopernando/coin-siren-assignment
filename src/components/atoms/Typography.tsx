@@ -23,7 +23,7 @@ export function Heading3({ children, className }: TypographyProps) {
 }
 
 export function Heading4({ children, className }: TypographyProps) {
-  return <h4 className={cn('scroll-m-20 text-xl font-semibold', className)}>{children}</h4>;
+  return <h4 className={cn('scroll-m-20 text-xl font-black', className)}>{children}</h4>;
 }
 
 export function Paragraph({ children, className }: TypographyProps) {
@@ -35,13 +35,13 @@ export function Lead({ children, className }: TypographyProps) {
 }
 
 export function Large({ children, className }: TypographyProps) {
-  return <div className={cn('text-lg font-semibold', className)}>{children}</div>;
+  return <div className={cn('text-lg font-black', className)}>{children}</div>;
 }
 
 export function Small({ children, className }: TypographyProps) {
-  return <small className={cn('text-sm font-medium leading-none', className)}>{children}</small>;
+  return <small className={cn('text-sm font-black leading-none', className)}>{children}</small>;
 }
 
 export function Muted({ children, className }: TypographyProps) {
-  return <p className={cn('text-sm text-muted-foreground', className)}>{children}</p>;
+  return <p className={cn('text-[13px] font-black text-muted-foreground', className)}>{children}</p>;
 }

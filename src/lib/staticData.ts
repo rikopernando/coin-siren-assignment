@@ -1,4 +1,4 @@
-import { LandingPageData, HeaderData, HeroSection, FeatureItem, ServiceCategory } from './types';
+import { LandingPageData, HeaderData, HeroSection, FeatureItem, ServiceCategory, FooterData } from './types';
 
 /**
  * Header navigation data
@@ -117,6 +117,55 @@ export const servicesData: ServiceCategory[] = [
 ];
 
 /**
+ * Footer section data
+ */
+export const footerData: FooterData = {
+  logo: 'hyperhire',
+  description: '우리는 국가의 장벽을 넘어 최고의 인재를 매칭해드립니다.',
+  phone: '010-0000-0000',
+  email: 'aaaaa@naver.com',
+  cards: [
+    {
+      id: 'overseas-dev',
+      iconName: 'icon-code.webp',
+      title: '해외 개발자 원격 채용',
+      link: '#',
+    },
+    {
+      id: 'overseas-marketing',
+      iconName: 'icon-avatar.webp',
+      title: '외국인 원격 채용 (비개발)',
+      link: '#',
+    },
+    {
+      id: 'korean-speaking',
+      iconName: 'icon-kor.webp',
+      title: '한국어 가능 외국인 채용',
+      link: '#',
+    },
+    {
+      id: 'overseas-service',
+      iconName: 'icon-gear.webp',
+      title: '해외 개발자 활용 서비스',
+      link: '#',
+    },
+  ],
+  companyInfo: {
+    name: '하이퍼하이어',
+    ceo: '김주현',
+    registrationNumber: '427-86-01187',
+    address: '서울특별시 강남대로 479, 지하 1층 238호',
+  },
+  indiaInfo: {
+    name: 'Hyperhire India Private Limited',
+    ceo: 'Juhyun Kim',
+    registrationNumber: 'U74110DL2016PTC290812',
+    address: 'D-138, Street number 11, Jagjeet Nagar, North East Delhi, New Delhi, 110053 India',
+  },
+  copyright: '© 2023 Hyperhire',
+};
+
+/**
  * Complete landing page data
  */
 export const landingPageData: LandingPageData = {
@@ -124,4 +173,5 @@ export const landingPageData: LandingPageData = {
   hero: heroData,
   features: featuresData,
   services: servicesData,
+  footer: footerData,
 };

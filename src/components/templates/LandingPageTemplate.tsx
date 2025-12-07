@@ -1,5 +1,6 @@
 import { Header } from '@/components/organisms/Header';
 import { HeroSection } from '@/components/organisms/HeroSection';
+import { Footer } from '@/components/organisms/Footer';
 import { LandingPageData } from '@/lib/types';
 
 export interface LandingPageTemplateProps {
@@ -18,7 +19,8 @@ export function LandingPageTemplate({ data }: LandingPageTemplateProps) {
         <HeroSection data={data} />
       </main>
 
-      <footer>Footer</footer>
+      {/* Footer */}
+      <Footer data={data.footer} />
     </div>
   );
 }
