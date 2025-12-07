@@ -4,7 +4,7 @@ A modern, high-performance landing page built with Next.js 14, featuring server 
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-deployment-url.vercel.app) _(Replace with actual deployment URL)_
+[View Live Demo](https://coin-siren-assignment-teal.vercel.app/)
 
 ## 📋 Table of Contents
 
