@@ -3,17 +3,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { TooltipArrow } from '@radix-ui/react-tooltip';
-import Image from 'next/image';
 
 import { Heading1, Heading3 } from '@/components/atoms/Typography';
 import { ProfileCarousel } from '@/components/molecules/ProfileCarousel';
 import { FeatureCard } from '@/components/molecules/FeatureCard';
 import { ServiceCard } from '@/components/molecules/ServiceCard';
+import { AbilityList } from '@/components/molecules/AbilityList';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { LandingPageData } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { fadeInUpVariants, fadeInVariants, fadeInDelayedVariants } from '@/lib/animations';
+import { useAutoScroll } from '@/hooks';
+import { TIMING } from '@/lib/constants';
 
 export interface HeroSectionProps {
   data: LandingPageData;
@@ -38,45 +40,13 @@ export function HeroSection({ data, className }: HeroSectionProps) {
     if (headlineInView && subheadlineInView) {
       const timer = setTimeout(() => {
         setShowTooltip(true);
-      }, 800); // 500ms animation + 300ms delay
+      }, TIMING.TOOLTIP_DELAY);
       return () => clearTimeout(timer);
     }
   }, [headlineInView, subheadlineInView]);
 
-  // Auto-scroll services every 5 seconds
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
-
-    const scrollInterval = setInterval(() => {
-      const firstCard = container.querySelector('[data-service-card]');
-      if (!firstCard) return;
-
-      const cardWidth = firstCard.clientWidth;
-      const gap = 16; // gap-4 = 16px
-      const scrollAmount = cardWidth + gap;
-
-      const currentScroll = container.scrollLeft;
-      const maxScroll = container.scrollWidth - container.clientWidth;
-
-      // Check if we're at or near the end
-      if (currentScroll >= maxScroll - 10) {
-        // Reset to start
-        container.scrollTo({
-          left: 0,
-          behavior: 'smooth',
-        });
-      } else {
-        // Scroll to next card
-        container.scrollBy({
-          left: scrollAmount,
-          behavior: 'smooth',
-        });
-      }
-    }, 5000);
-
-    return () => clearInterval(scrollInterval);
-  }, []);
+  // Auto-scroll services
+  useAutoScroll(scrollContainerRef);
 
   return (
     <TooltipProvider>
@@ -186,27 +156,15 @@ export function HeroSection({ data, className }: HeroSectionProps) {
 
         <div className="flex flex-col md:hidden container mx-auto px-4 mt-40">
           {/* Ability section - Mobile only */}
-          <div className="flex gap-x-2 mb-2 mt-6">
-            <div className="min-w-[92px] flex items-center gap-2">
-              <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
-              <span className="text-white text-sm font-bold">한국어 능력</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
-              <span className="text-white text-sm font-bold">업무 수행 능력</span>
-            </div>
-          </div>
-
-          <div className="flex gap-x-2 mb-6">
-            <div className="min-w-[92px] flex items-center gap-2">
-              <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
-              <span className="text-white text-sm font-bold">겸업 여부</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
-              <span className="text-white text-sm font-bold">평판 조회</span>
-            </div>
-          </div>
+          <AbilityList
+            className="mt-6 mb-6"
+            abilities={[
+              { id: 'korean', label: '한국어 능력' },
+              { id: 'performance', label: '업무 수행 능력' },
+              { id: 'parttime', label: '겸업 여부' },
+              { id: 'reputation', label: '평판 조회' },
+            ]}
+          />
 
           {/* CTA for mobile*/}
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center">

@@ -2,6 +2,9 @@
  * Type definitions for Coin Siren Landing Page
  */
 
+// Re-export common utility types
+export type * from './types/common';
+
 export interface NavigationItem {
   label: string;
   href?: string;

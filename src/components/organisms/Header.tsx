@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import { Logo } from '@/components/atoms/Logo';
 import { NavBarLink } from '@/components/molecules/NavBarLink';
@@ -8,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HeaderData } from '@/lib/types';
 import { cn } from '@/lib/utils';
+import { useScrollDetection } from '@/hooks';
+import { SIZES } from '@/lib/constants';
 
 export interface HeaderProps {
   data: HeaderData;
@@ -15,16 +16,7 @@ export interface HeaderProps {
 }
 
 export function Header({ data, className }: HeaderProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const isScrolled = useScrollDetection();
 
   return (
     <header
@@ -36,7 +28,7 @@ export function Header({ data, className }: HeaderProps) {
       <div className="container mx-auto flex py-2.5 items-center justify-between px-4 lg:px-8">
         {/* Logo */}
         <div className="flex-shrink-0">
-          <Logo variant={isScrolled ? 'light' : 'dark'} width={140} height={26} />
+          <Logo variant={isScrolled ? 'light' : 'dark'} {...SIZES.LOGO.MOBILE} />
         </div>
 
         {/* Navigation - centered - Desktop only */}
