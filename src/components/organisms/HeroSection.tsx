@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { TooltipArrow } from '@radix-ui/react-tooltip';
+import Image from 'next/image';
 
 import { Heading1, Heading3 } from '@/components/atoms/Typography';
 import { ProfileCarousel } from '@/components/molecules/ProfileCarousel';
@@ -79,11 +80,11 @@ export function HeroSection({ data, className }: HeroSectionProps) {
 
   return (
     <TooltipProvider>
-      <section className={cn('py-20 md:pt-[14rem] md:pb-20', className)}>
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2">
+      <section className={cn('pt-[11rem] md:pt-[14rem] pb-16', className)}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:gap-12 lg:grid-cols-2">
             {/* Left Column - Text Content */}
-            <div className="flex flex-col justify-center space-y-6">
+            <div className="flex flex-col justify-center space-y-4 md:space-y-6">
               <motion.div
                 ref={headlineRef}
                 initial="hidden"
@@ -92,7 +93,9 @@ export function HeroSection({ data, className }: HeroSectionProps) {
                 <Tooltip open={showTooltip}>
                   <TooltipTrigger asChild>
                     <div>
-                      <Heading1 id="hero-headline" className="text-white font-bold !leading-[58px]">
+                      <Heading1
+                        id="hero-headline"
+                        className="text-white max-w-[330px] md:max-w-full font-bold !leading-tight md:!leading-[58px] text-4xl md:text-5xl">
                         {data.hero.headline.split('\n').map((line, index) => (
                           <span key={index} className="block">
                             {line}
@@ -101,7 +104,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
                       </Heading1>
                     </div>
                   </TooltipTrigger>
-                  <TooltipContent side="top" align="start" arrowPadding={10} sideOffset={16}>
+                  <TooltipContent variant="primary" side="top" align="start" arrowPadding={10} sideOffset={16}>
                     <motion.p
                       initial="hidden"
                       animate={showTooltip ? 'visible' : 'hidden'}
@@ -109,7 +112,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
                       풀타임, 파트타임
                     </motion.p>
                     <div className="absolute bottom-0 -left-[110px]">
-                      <TooltipArrow className="fill-white !visible" width={12} height={6} />
+                      <TooltipArrow className="fill-tooltip-primary !visible" width={12} height={6} />
                     </div>
                   </TooltipContent>
                 </Tooltip>
@@ -120,7 +123,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
                 initial="hidden"
                 animate={subheadlineInView ? 'visible' : 'hidden'}
                 variants={fadeInUpVariants}>
-                <Heading3 id="hero-subheadline" className="text-white">
+                <Heading3 id="hero-subheadline" className="text-white text-lg sm:text-xl md:text-2xl">
                   {data.hero.subheadline.split('\n').map((line, index) => (
                     <span key={index} className="block">
                       {line}
@@ -128,8 +131,11 @@ export function HeroSection({ data, className }: HeroSectionProps) {
                   ))}
                 </Heading3>
 
-                <div id="hero-cta" className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Button size="lg" variant="link" className="p-0 text-[18px] text-white">
+                <div className="hidden md:flex flex-col gap-4 sm:flex-row sm:items-center mt-4">
+                  <Button
+                    size="lg"
+                    variant="link"
+                    className="p-0 text-base sm:text-lg text-white justify-start sm:justify-center">
                     {data.hero.ctaText}
                   </Button>
                 </div>
@@ -138,7 +144,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
               <motion.div
                 ref={featuresRef}
                 id="feature-card-wrapper"
-                className="!mt-12 grid gap-16 md:grid-cols-3"
+                className="hidden !mt-8 md:!mt-12 md:grid gap-8 sm:gap-12 md:gap-16 grid-cols-1 sm:grid-cols-3"
                 initial="hidden"
                 animate={featuresInView ? 'visible' : 'hidden'}
                 variants={fadeInVariants}>
@@ -149,7 +155,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
             </div>
 
             {/* Right Column - Profile Carousel */}
-            <div className="-mt-20 flex items-center justify-start">
+            <div className="mt-[14rem] lg:-mt-20 flex items-center justify-center lg:justify-start">
               <ProfileCarousel profiles={data.hero.profileCards || [data.hero.profileCard]} className="w-full" />
             </div>
           </div>
@@ -159,13 +165,13 @@ export function HeroSection({ data, className }: HeroSectionProps) {
         <motion.div
           ref={servicesRef}
           id="service-card-wrapper"
-          className="mt-12 w-full"
+          className="hidden md:block mt-8 md:mt-12 w-full"
           initial="hidden"
           animate={servicesInView ? 'visible' : 'hidden'}
           variants={fadeInVariants}>
           <div ref={scrollContainerRef} className="overflow-x-auto scrollbar-hide">
             <div className="2xl:flex 2xl:justify-center mx-auto max-w-7xl">
-              <div className="inline-flex gap-4 px-6 lg:px-8 pb-4">
+              <div className="inline-flex gap-3 sm:gap-4 px-4 sm:px-6 lg:px-8 pb-4">
                 {data.services.map((service) => (
                   <ServiceCard key={service.id} service={service} className="flex-shrink-0" data-service-card />
                 ))}
@@ -173,6 +179,36 @@ export function HeroSection({ data, className }: HeroSectionProps) {
             </div>
           </div>
         </motion.div>
+
+        <div className="flex flex-col md:hidden container mx-auto px-4 mt-40">
+          {/* Ability section - Mobile only */}
+          <div className="grid grid-cols-4 gap-x-2 gap-y-3 my-6">
+            <div className="col-span-1 flex items-center gap-2">
+              <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
+              <span className="text-white text-sm font-bold">한국어 능력</span>
+            </div>
+            <div className="col-span-3 flex items-center gap-2">
+              <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
+              <span className="text-white text-sm font-bold">업무 수행 능력</span>
+            </div>
+
+            <div className="col-span-1 flex items-center gap-2">
+              <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
+              <span className="text-white text-sm font-bold">겸업 여부</span>
+            </div>
+            <div className="col-span-3 flex items-center gap-2">
+              <Image src="/icons/icon-checkbox.webp" width={20} height={20} alt="check" />
+              <span className="text-white text-sm font-bold">평판 조회</span>
+            </div>
+          </div>
+
+          {/* CTA for mobile*/}
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <Button size="lg" variant="link" className="p-0 text-base text-yellow justify-start sm:justify-center">
+              {data.hero.ctaText}
+            </Button>
+          </div>
+        </div>
       </section>
     </TooltipProvider>
   );

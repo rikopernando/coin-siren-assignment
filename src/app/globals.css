@@ -30,6 +30,14 @@
   .text-tooltip-secondary {
     color: hsla(var(--tooltip-secondary), 1);
   }
+
+  .bg-tooltip-primary {
+    background-color: hsla(var(--tooltip-primary-foreground), 1);
+  }
+
+  .fill-tooltip-primary {
+    fill: hsla(var(--tooltip-primary-foreground), 1);
+  }
 }
 
 @layer base {
@@ -52,6 +60,8 @@
     --destructive-foreground: 0 0% 98%;
     --tooltip-secondary: 165, 100%, 39%;
     --tooltip-secondary-foreground: 146, 47%, 94%;
+    --tooltip-primary: 211, 100%, 77%;
+    --tooltip-primary-foreground: 211, 100%, 77%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 217 91% 60%;
@@ -65,6 +75,7 @@
     --footer-text-primary: 225, 11%, 23%;
     --footer-text-secondary: 225, 8%, 40%;
     --gray-700: 217, 23%, 27%;
+    --yellow: 61, 100%, 57%;
   }
   .dark {
     --background: 0 0% 3.9%;

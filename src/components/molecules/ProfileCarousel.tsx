@@ -93,13 +93,17 @@ export function ProfileCarousel({ profiles, className }: ProfileCarouselProps) {
                     // Active card - centered, full size, on top
                     isActive && 'z-30 scale-100 -translate-x-1/2 opacity-100',
                     // Previous card - left side, half hidden under active card
-                    isPrev && 'z-10 scale-y-90 scale-x-100 -translate-x-[92%] opacity-85',
+                    isPrev && 'z-10 scale-y-90 scale-x-100 -translate-x-[70%]  md:-translate-x-[92%] opacity-85',
                     // Next card - right side, half hidden under active card
-                    isNext && 'z-10 scale-y-90 scale-x-100 translate-x-[-4%] opacity-85',
+                    isNext && 'z-10 scale-y-90 scale-x-100 -translate-x-[31%] md:-translate-x-[4%] opacity-85',
                     // Other cards - completely hidden
                     position === null && 'z-0 scale-75 -translate-x-1/2 opacity-0 pointer-events-none',
                   )}>
-                  <ProfileCard profile={profile} className="w-[292px] min-h-[400px] shadow-2xl" isActive={isActive} />
+                  <ProfileCard
+                    profile={profile}
+                    className="w-[234px] min-h-[311px] md:w-[292px] md:min-h-[400px] shadow-lg"
+                    isActive={isActive}
+                  />
                 </div>
               );
             })}
@@ -111,7 +115,7 @@ export function ProfileCarousel({ profiles, className }: ProfileCarouselProps) {
       <Button
         variant="outline"
         size="icon"
-        className="absolute -left-[16px] top-1/2 -translate-y-1/2 z-40 border-0 text-white bg-transparent hover:text-primary-foreground rounded-full"
+        className="absolute left-0 md:-left-[16px] top-1/2 -translate-y-1/2 z-40 border-0 text-white bg-transparent hover:text-primary-foreground rounded-full"
         onClick={scrollPrev}>
         <ChevronLeft className="!h-8 !w-8" />
       </Button>
@@ -119,7 +123,7 @@ export function ProfileCarousel({ profiles, className }: ProfileCarouselProps) {
       <Button
         variant="outline"
         size="icon"
-        className="absolute -right-[24px] top-1/2 -translate-y-1/2 z-40 border-0 text-white bg-transparent hover:text-primary-foreground rounded-full"
+        className="absolute right-[2px] md:-right-[24px] top-1/2 -translate-y-1/2 z-40 border-0 text-white bg-transparent hover:text-primary-foreground rounded-full"
         onClick={scrollNext}>
         <ChevronRight className="!h-8 !w-8" />
       </Button>

@@ -58,6 +58,9 @@ const config: Config = {
         gray: {
           700: 'hsl(var(--gray-700))',
         },
+        yellow: {
+          DEFAULT: 'hsl(var(--yellow))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -49,26 +49,34 @@ export function ProfileCard({ profile, className, isActive = false }: ProfileCar
       <Tooltip open={showTooltip}>
         <TooltipTrigger asChild>
           <div>
-            <Card className={cn('max-w-xs soverflow-hidden', className)}>
-              <CardHeader className="space-y-6 pt-8 px-8 pb-6">
+            <Card className={cn('max-w-xs overflow-hidden flex flex-col justify-center ', className)}>
+              <CardHeader className="space-y-4 sm:space-y-6 pt-4 sm:pt-8 px-4 sm:px-8 pb-4 sm:pb-6">
                 <div className="flex flex-col items-center gap-2">
-                  <Avatar className="h-[120px] w-[120px] shadow-lg overflow-visible">
+                  <Avatar className="h-[64px] w-[64px] sm:h-[120px] sm:w-[120px] shadow-lg overflow-visible">
                     <AvatarImage src={profile.imageUrl} alt={profile.name} />
-                    <AvatarFallback className="text-xl font-bold">{getInitials(profile.name)}</AvatarFallback>
-                    <div className="absolute bottom-1 right-1.5">
-                      <Image width={25} height={18} src={profile.countryFlagUrl} alt="Country" />
+                    <AvatarFallback className="text-lg sm:text-xl font-bold">
+                      {getInitials(profile.name)}
+                    </AvatarFallback>
+                    <div className="absolute bottom-0 -right-1  md:bottom-1 md:right-1.5">
+                      <Image
+                        width={22}
+                        height={16}
+                        src={profile.countryFlagUrl}
+                        alt="Country"
+                        className="sm:w-[25px] sm:h-[18px]"
+                      />
                     </div>
                   </Avatar>
-                  <Heading3 className="text-center">{profile.name}</Heading3>
-                  <Large className="mt-0 text-md font-black leading-relaxed text-primary-foreground">
+                  <Heading3 className="text-center text-[18px] sm:text-2xl">{profile.name}</Heading3>
+                  <Large className="mt-0 text-sm sm:text-md font-black leading-relaxed text-primary-foreground">
                     {profile.experience}
                   </Large>
                 </div>
               </CardHeader>
-              <CardContent className="px-8 pb-8">
-                <div className="flex flex-wrap justify-center gap-2">
+              <CardContent className="px-4 sm:px-8 pb-4 sm:pb-8">
+                <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
                   {profile.skills.map((skill, index) => (
-                    <Badge key={index} variant="outline" className="px-3 py-1">
+                    <Badge key={index} variant="outline" className="px-3 py-1 text-sm md:text-base">
                       {skill}
                     </Badge>
                   ))}

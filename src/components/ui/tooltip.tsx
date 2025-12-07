@@ -19,7 +19,7 @@ const TooltipContent = React.forwardRef<React.ElementRef<typeof TooltipPrimitive
   ({ className, sideOffset = 4, variant = 'default', ...props }, ref) => {
     const variantStyles = {
       default: 'bg-white text-secondary-foreground',
-      primary: 'bg-white text-white-foreground',
+      primary: 'bg-tooltip-primary text-white',
       secondary: 'bg-tooltip-secondary text-tooltip-secondary',
       accent: 'bg-accent text-accent-foreground',
     };
