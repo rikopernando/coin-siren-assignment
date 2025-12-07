@@ -36,7 +36,7 @@ export function Footer({ data, className }: FooterProps) {
         </div>
 
         <div className="grid gap-8 sm:gap-8 lg:grid-cols-[1fr,2fr]">
-          <div className="grid grid-cols-2 md:flex md:flex-row gap-6 md:gap-4">
+          <div className="grid grid-cols-2 lg:flex lg:flex-row gap-6 lg:gap-4">
             <div className="col-span-1 space-y-1.5 sm:space-y-2">
               <Small className="text-footer-text-primary text-xs sm:text-sm">상호명</Small>
               <Muted className="text-footer-text-secondary">{data.companyInfo.name}</Muted>

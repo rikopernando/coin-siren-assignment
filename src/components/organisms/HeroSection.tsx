@@ -80,7 +80,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
 
   return (
     <TooltipProvider>
-      <section className={cn('pt-[11rem] md:pt-[14rem] pb-16', className)}>
+      <section className={cn('pt-[11rem] md:pt-[11rem] lg:pt-[14rem] pb-16', className)}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:gap-12 lg:grid-cols-2">
             {/* Left Column - Text Content */}
@@ -123,7 +123,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
                 initial="hidden"
                 animate={subheadlineInView ? 'visible' : 'hidden'}
                 variants={fadeInUpVariants}>
-                <Heading3 id="hero-subheadline" className="hidden sm:blocktext-white text-lg sm:text-xl md:text-2xl">
+                <Heading3 id="hero-subheadline" className="hidden sm:block text-white text-lg sm:text-xl md:text-2xl">
                   {data.hero.subheadline.split('\n').map((line, index) => (
                     <span key={index} className="block">
                       {line}
@@ -148,7 +148,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
               <motion.div
                 ref={featuresRef}
                 id="feature-card-wrapper"
-                className="hidden !mt-8 md:!mt-12 md:grid gap-8 sm:gap-12 md:gap-16 grid-cols-1 sm:grid-cols-3"
+                className="hidden !mt-8 md:!mt-8 lg:!mt-12 md:grid gap-8 sm:gap-12 md:gap-16 grid-cols-1 sm:grid-cols-3"
                 initial="hidden"
                 animate={featuresInView ? 'visible' : 'hidden'}
                 variants={fadeInVariants}>
@@ -159,7 +159,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
             </div>
 
             {/* Right Column - Profile Carousel */}
-            <div className="mt-[14rem] lg:-mt-20 flex items-center justify-center lg:justify-start">
+            <div className="mt-[14rem] md:mt-[17rem] lg:-mt-20 flex items-center justify-center lg:justify-start">
               <ProfileCarousel profiles={data.hero.profileCards || [data.hero.profileCard]} className="w-full" />
             </div>
           </div>
@@ -169,7 +169,7 @@ export function HeroSection({ data, className }: HeroSectionProps) {
         <motion.div
           ref={servicesRef}
           id="service-card-wrapper"
-          className="hidden md:block mt-8 md:mt-12 w-full"
+          className="hidden md:block mt-8 md:mt-[15rem] lg:mt-12 w-full"
           initial="hidden"
           animate={servicesInView ? 'visible' : 'hidden'}
           variants={fadeInVariants}>
