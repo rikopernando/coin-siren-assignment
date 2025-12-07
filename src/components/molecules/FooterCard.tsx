@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -11,7 +12,7 @@ export interface FooterCardProps {
   className?: string;
 }
 
-export function FooterCard({ card, className }: FooterCardProps) {
+export const FooterCard = memo(function FooterCard({ card, className }: FooterCardProps) {
   return (
     <Link href={card.link}>
       <Card
@@ -38,4 +39,4 @@ export function FooterCard({ card, className }: FooterCardProps) {
       </Card>
     </Link>
   );
-}
+});

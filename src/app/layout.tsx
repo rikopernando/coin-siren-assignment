@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { Poppins, Inter } from 'next/font/google';
+
+import { ErrorBoundary } from '@/components/ErrorBoundary';
+
 import './globals.css';
 
 const poppins = Poppins({
@@ -30,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${inter.variable} ${poppins.className} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} ${inter.variable} ${poppins.className} antialiased`}>
+        <ErrorBoundary>{children}</ErrorBoundary>
+      </body>
     </html>
   );
 }

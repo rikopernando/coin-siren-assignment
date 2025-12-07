@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Lead, Paragraph } from '@/components/atoms/Typography';
 import { FeatureItem } from '@/lib/types';
 import { cn } from '@/lib/utils';
@@ -7,7 +8,7 @@ export interface FeatureCardProps {
   className?: string;
 }
 
-export function FeatureCard({ feature, className }: FeatureCardProps) {
+export const FeatureCard = memo(function FeatureCard({ feature, className }: FeatureCardProps) {
   return (
     <div className={cn('py-2 flex flex-col space-y-2', className)}>
       <div className="border-t w-[75%]" />
@@ -15,4 +16,4 @@ export function FeatureCard({ feature, className }: FeatureCardProps) {
       <Paragraph className="mt-0 text-md leading-relaxed text-white">{feature.description}</Paragraph>
     </div>
   );
-}
+});
